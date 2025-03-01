@@ -16,15 +16,15 @@ class ServiceStudentTest {
     @BeforeEach
     void setUp() {
         serviceStudent = new ServiceStudent();
-        Student student1 = new Student(1,"a",20,9.0);
-        serviceStudent.getListStudent().add(student1);
+        student = new Student(1,"a",20,9.0);
+        serviceStudent .getListStudent().add(student);
     }
 
     @Test
     void addStudentWithValidStudent() {
         Student student = new Student(2,"a",20,9.0);
         serviceStudent.addStudent(student);
-        assertEquals(2,serviceStudent.getAllStudents().size());
+        assertEquals(2,serviceStudent.getListStudent().get(1).getId());
     }
 
     @Test
@@ -137,5 +137,11 @@ class ServiceStudentTest {
 //        });
 //        assertEquals("số trong mảng phải <=100",exception.getMessage());
 //    }
+
+    @Test
+    void testTinhTongMangSoNguyen() {
+        Integer ketQua = serviceStudent.tinhTongMangSoNguyen(new int[] {2,3,4});
+        assertEquals(9,ketQua);
+    }
 
 }

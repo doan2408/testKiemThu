@@ -7,8 +7,12 @@ import java.util.Optional;
 public class ServiceStudent {
     private List<Student> students = new ArrayList<>();
 
-     List<Student> getListStudent() {
+     public List<Student> setListStudent() {
         return students;
+    }
+
+    public List<Student> getListStudent() {
+        return new ArrayList<>(students);
     }
 
     void setListStudent(List<Student> list) {
@@ -110,8 +114,16 @@ public class ServiceStudent {
     }
 
 
-    public List<Student> getAllStudents() {
-        return new ArrayList<>(students);
+
+    public Integer tinhTongMangSoNguyen(int[] mang) {
+        int sum=0;
+        for(int i=0; i<mang.length; i++) {
+            sum += mang[i];
+        }
+        return sum;
     }
+
+
+
 
 }
