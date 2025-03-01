@@ -34,7 +34,7 @@ class SumArrayTest {
             int mang[] = null;
             sumArray.tinhTongMang(mang);
         });
-        assertEquals("mang khong duoc nullll", exception.getMessage());
+        assertEquals("mang khong duoc null", exception.getMessage());
     }
 
     @Test
